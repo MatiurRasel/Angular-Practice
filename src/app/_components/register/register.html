@@ -1,4 +1,4 @@
-<form 
+<!-- <form 
     [formGroup]= "registerForm"
     (ngSubmit)="registerForm.valid && register()" 
      autocomplete="off"
@@ -44,7 +44,6 @@
             <select id="country" class="form-control" formControlName="country">
               <option value="" disabled>Select Country</option>
               <option value="BD">Bangladesh</option>
-              <!-- Add more country options as needed -->
             </select>
         </div>
         <div class="mb-3">
@@ -66,4 +65,102 @@
             <button [disabled]="!registerForm.valid" 
             class="btn btn-success me-2" type="submit"> Register</button>
         </div>
+</form> -->
+
+
+<form 
+    [formGroup]="registerForm"
+    (ngSubmit)="registerForm.valid && register()" 
+    autocomplete="off"
+    class="container mx-auto p-4"
+>
+    <h2 class="text-center text-primary text-2xl mb-4">Register</h2>
+    <hr class="mb-4">
+
+    <!-- Gender Selection -->
+    <div class="mb-4 flex items-center">
+        <span class="mr-4">I am a:</span>
+        <label class="inline-flex items-center">
+            <input type="radio" class="form-radio" value="male" formControlName="gender"> <span class="ml-2">Male</span>
+        </label>
+        <label class="inline-flex items-center ml-4">
+            <input type="radio" class="form-radio" value="female" formControlName="gender"> <span class="ml-2">Female</span>
+        </label>
+    </div>
+
+    <!-- Username -->
+    <div class="mb-4">
+        <label for="userName" class="block mb-2">User Name</label>
+        <input 
+            type="text"
+            class="w-full px-3 py-2 border rounded-md"
+            formControlName="userName"
+            placeholder="User Name"
+        >
+    </div>
+
+    <!-- Known As -->
+    <div class="mb-4">
+        <label for="knownAs" class="block mb-2">Known As</label>
+        <input 
+            type="text"
+            class="w-full px-3 py-2 border rounded-md"
+            formControlName="knownAs"
+            placeholder="Known As"
+        >
+    </div>
+
+    <!-- Date of Birth -->
+    <div class="mb-4">
+        <label for="dateOfBirth" class="block mb-2">Date Of Birth</label>
+        <input
+            #dateOfBirthInput 
+            type="text"
+            class="w-full px-3 py-2 border rounded-md"
+            placeholder="Select Date of Birth"
+            formControlName="dateOfBirth"
+            
+        >
+    </div>
+
+    <!-- Country -->
+    <div class="mb-4">
+        <label for="country" class="block mb-2">Country</label>
+        <select id="country" class="w-full px-3 py-2 border rounded-md" formControlName="country">
+            <option value="" disabled>Select Country</option>
+            <option value="BD">Bangladesh</option>
+            <!-- Add more country options as needed -->
+        </select>
+    </div>
+
+    <!-- City -->
+    <div class="mb-4">
+        <label for="city" class="block mb-2">City</label>
+        <select id="city" class="w-full px-3 py-2 border rounded-md" formControlName="city">
+            <option value="" disabled>Select City</option>
+            <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+        </select>
+    </div>
+
+    <!-- Password -->
+    <div class="mb-4">
+        <label for="password" class="block mb-2">Password</label>
+        <input 
+            type="password"
+            class="w-full px-3 py-2 border rounded-md"
+            formControlName="password"
+            placeholder="Password"
+        >
+    </div>
+
+    <!-- Submit Button -->
+    <div class="text-center">
+        <button 
+            [disabled]="!registerForm.valid" 
+            class="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600"
+            type="submit"
+        >
+            Register
+        </button>
+    </div>
 </form>

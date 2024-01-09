@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+<!-- <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
     <div class="container">
         <a class="navbar-brand"  routerLink="/" routerLinkActive="active">Test Project</a>
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
@@ -14,4 +14,36 @@
             </ng-container>
         </ul>
     </div>
-</nav>
+</nav> -->
+
+<nav class="bg-gradient-to-r from-blue-500 to-purple-600">
+    <div class="container mx-auto px-4 py-2">
+      <div class="flex items-center justify-between">
+        <!-- Brand/logo -->
+        <a class="text-white text-2xl font-extrabold tracking-wider" routerLink="/" routerLinkActive="active">Test Project</a>
+        
+        <!-- Navbar links -->
+        <ul id="navLinks" class="hidden md:flex space-x-6">
+          <li>
+            <a class="text-white hover:text-gray-200 transition duration-300" routerLink="/login" routerLinkActive="active">Login</a>
+          </li>
+          <li>
+            <a class="text-white hover:text-gray-200 transition duration-300" routerLink="/register" routerLinkActive="active">Register</a>
+          </li>
+        </ul>
+  
+        <!-- Mobile toggle button for smaller screens -->
+        <button id="menuToggle" class="md:hidden text-white" (click)="toggleMenu()">
+          <!-- Hamburger icon -->
+          <span class="block h-6 w-6">
+            <!-- You can use an icon library like FontAwesome or Heroicons for the hamburger icon -->
+            <!-- For simplicity, using a basic div for demonstration -->
+            <div class="bg-white h-0.5 w-6 mb-1"></div>
+            <div class="bg-white h-0.5 w-6 mb-1"></div>
+            <div class="bg-white h-0.5 w-6"></div>
+          </span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  

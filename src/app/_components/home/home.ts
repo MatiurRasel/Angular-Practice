@@ -14,4 +14,11 @@ export class Home {
 
     } 
 
+    toggleMenu(): void {
+        const navLinks = document.getElementById('navLinks');
+        if (navLinks) {
+          navLinks.classList.toggle('hidden'); // Toggle the 'hidden' class to show/hide the navigation links
+        }
+      }
+
 }

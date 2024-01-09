@@ -5,3 +5,13 @@ npm install bootstrap --legacy-peer-deps
 --For Date Time
 npm install ngx-bootstrap --save --legacy-peer-deps
 
+
+
+
+
+--For Tailwind
+npm install tailwindcss --legacy-peer-deps
+npx tailwindcss init
+
+npm install flatpickr
+
