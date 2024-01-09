@@ -5,4 +5,65 @@
     >
     <h2 class="text-center text-primary">Register</h2>
     <hr>
+
+    <div class="mb-3">
+        <label style="margin-right: 10px;">I am a: </label>
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input ms-1" value="male" formControlName="gender"> Male
+            <input type="radio" class="form-check-input ms-3" value="female" formControlName="gender"> Female
+        </label>
+    </div>
+        <div class="mb-3">
+        <label for="userName" class="form-label">User Name</label>
+        <input type="text"
+            class="form-control"
+            formControlName="userName"
+            placeholder= "User Name">
+        </div>
+        <div class="mb-3">
+        <label for="knownAs" class="form-label">Known As</label>
+        <input type="text"
+            class="form-control"
+            formControlName="knownAs"
+            placeholder= "Known As">
+        </div>
+        <div class="mb-3">
+            <label for="dateOfBirth" class="form-label">Date Of Birth</label>
+            <input 
+                type="text"
+                class="form-control"
+                placeholder="Select Date of Birth"
+                formControlName="dateOfBirth"
+                bsDatepicker
+                [bsConfig]="bsConfig"
+                [maxDate]="maxDate"
+                >
+            </div>
+        <div class="mb-3">
+            <label for="country" class="form-label">Country</label>
+            <select id="country" class="form-control" formControlName="country">
+              <option value="" disabled>Select Country</option>
+              <option value="BD">Bangladesh</option>
+              <!-- Add more country options as needed -->
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="city" class="form-label">City</label>
+            <select id="city" class="form-control" formControlName="city">
+              <option value="" disabled>Select City</option>
+              <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+            </select>
+        </div>
+        <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="text"
+            class="form-control"
+            formControlName="password"
+            placeholder= "Password">
+            
+        </div>
+        <div class="text-center">
+            <button [disabled]="!registerForm.valid" 
+            class="btn btn-success me-2" type="submit"> Register</button>
+        </div>
 </form>
